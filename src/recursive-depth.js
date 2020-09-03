@@ -8,9 +8,7 @@ module.exports = class DepthCalculator {
       let depth = 1;
       if (Array.isArray(arr[i])) {
         depth += this.calculateDepth(arr[i]);
-        if (depth > count) {
-          count = depth;
-        };
+        count = (depth > count) ? depth : count;
       };
     };
     return count;
